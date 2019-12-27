@@ -1,0 +1,1 @@
+export const UPDATE_APP_STATUS: string = 'BASIC/UPDATE_APP_STATUS';

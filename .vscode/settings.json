@@ -1,0 +1,4 @@
+{
+  "less.lint.duplicateProperties": "warning",
+  "editor.formatOnSave": true
+}

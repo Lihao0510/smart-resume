@@ -2,20 +2,23 @@ import * as React from 'react';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import { NextPage } from 'next';
-import Style from '../less/pages/home.less';
+import { connect } from 'react-redux';
 
-const IndexPage: NextPage = () => {
-	const name = { name: 'fuck' };
+const IndexPage: NextPage = (props: any) => {
 	return (
 		<Layout title="Home | Next.js + TypeScript Example">
-			<h1 className={Style.title}>Hello Next.js 👋</h1>
+			<h1>Hello {props.appStatus} 👋</h1>
 			<p>
 				<Link href="/about">
-					<a>About{name.name}</a>
+					<a>About</a>
 				</Link>
 			</p>
 		</Layout>
 	);
 };
 
-export default IndexPage;
+const mapStateToProps = (state: any) => ({
+	appStatus: state.BasicReducer.appStatus
+});
+
+export default connect(mapStateToProps)(IndexPage);

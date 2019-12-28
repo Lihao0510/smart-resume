@@ -6,8 +6,12 @@ const initialState = { appStatus: 'PC' };
 
 const reducer = handleActions(
 	{
-		[BasicTypes.UPDATE_APP_STATUS]: (state: BasicState, payload: string) => {
-			return Object.assign({}, state, { appStatus: payload });
+		[BasicTypes.UPDATE_APP_STATUS]: (
+			state: BasicState,
+			action: { payload: any; type: string }
+		) => {
+			console.log('UPDATE_APP_STATUS 收到事件 ==>', action.payload);
+			return Object.assign({}, state, { appStatus: action.payload });
 		}
 	},
 	initialState

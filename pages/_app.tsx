@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import App from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { initStore } from '../redux/store';
+import '../public/style/index.less';
 
 class SmartResumeApp extends App {
 	static async getInitialProps({ Component, ctx }: any) {

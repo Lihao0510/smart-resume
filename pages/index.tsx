@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { NextPage } from 'next';
 import { connect } from 'react-redux';
 import { updateAppStatusAsync } from '../redux/action/BasicAction';
+import { Button } from 'antd';
 
 const IndexPage: NextPage = (props: any) => {
 	return (
@@ -22,13 +23,13 @@ const IndexPage: NextPage = (props: any) => {
 					<a>ResumeDetail</a>
 				</Link>
 			</p>
-			<button
+			<Button
 				onClick={() => {
 					props.updateAppStatusAsync('APP');
 				}}
 			>
 				点击发送事件
-			</button>
+			</Button>
 		</Layout>
 	);
 };
